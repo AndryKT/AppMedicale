@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>Appication de test du framework creer Andry</display-name>
+
+    <listener>
+        <listener-class>servlet.AppStartupListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>FrontControllerServlet</servlet-name>
+        <servlet-class>servlet.FrontControllerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FrontControllerServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>upload.path</param-name>
+        <param-value>/home/andry/Documents/S5/tomcat/webapps/Etudiant/upload</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>auth.session.key</param-name>
+        <param-value>utilisateurConnecte</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>auth.role.key</param-name>
+        <param-value>roles</param-value>
+    </context-param>
+
+    
+</web-app>
