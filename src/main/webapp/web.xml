@@ -36,5 +36,14 @@
         <param-value>roles</param-value>
     </context-param>
 
+    <servlet>
+    <servlet-name>StaticResources</servlet-name>
+    <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
     
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StaticResources</servlet-name>
+        <url-pattern>/assets/*</url-pattern>
+    </servlet-mapping>
 </web-app>
