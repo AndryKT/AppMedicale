@@ -19,6 +19,7 @@ if errorlevel 1 (
   echo [ERREUR] Copie des jars impossible.
   exit /b 1
 )
+if exist "%DEPLOYED_LIB%\Sprint10-bis-api.jar" del /F /Q "%DEPLOYED_LIB%\Sprint10-bis-api.jar"
 
 REM --- Liste des fichiers .java (slashs pour le fichier d'arguments de javac)
 set "SOURCES_FILE=%TEMP%\sources_javac.txt"

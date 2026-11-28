@@ -13,6 +13,7 @@ DEPLOYED_LIB="$DEPLOYED_WEB_INF/lib"
 mkdir -p "$CLASSES_DIR" "$DEPLOYED_LIB"
 
 cp "$LIB_DIR"/*.jar "$DEPLOYED_LIB/"
+rm -f "$DEPLOYED_LIB/Sprint10-bis-api.jar"
 
 javac -encoding UTF-8 \
   -cp "$DEPLOYED_LIB/*" \

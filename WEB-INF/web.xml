@@ -7,6 +7,11 @@
 
     <display-name>Appication de test du framework creer Andry</display-name>
 
+    <context-param>
+        <param-name>database.config</param-name>
+        <param-value>/db.properties</param-value>
+    </context-param>
+
     <listener>
         <listener-class>servlet.AppStartupListener</listener-class>
     </listener>
