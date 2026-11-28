@@ -10,7 +10,7 @@ import model.User;
 public class PatientController {
     @UrlMapping(value = "/patient", method = "GET")
     public ModelAndView afficherPagePatient() {
-        ModelAndView modelAndView = new ModelAndView("/pages/PatientListe.jsp");
+        ModelAndView modelAndView = new ModelAndView("/pages/ListePatient.jsp");
         return modelAndView;
     }
 

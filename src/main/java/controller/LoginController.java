@@ -6,7 +6,8 @@ import model.MySession;
 
 @Controller
 public class LoginController {
-    @UrlMapping(value = "/", method = "GET")
+
+    @UrlMapping(value = "/", method = "POST")
     public ModelAndView login(String identifiant, MySession session) {
         session.add("identifiant", identifiant);
         return new ModelAndView("accueil");
