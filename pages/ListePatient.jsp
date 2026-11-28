@@ -1,3 +1,12 @@
+<%@page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page import="java.util.List"%>
+<%@page import="model.Patient"%>
+
+<%
+    List<Patient> patients = (List<Patient>) request.getAttribute("patients");
+
+%>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -47,42 +56,22 @@
           </tr>
         </thead>
         <tbody>
+        <% for (Patient patient : patients) { %>
           <tr>
-            <td class="num">P-0001</td>
-            <td>Rakoto</td>
-            <td>Jean</td>
-            <td>12/03/1985</td>
-            <td>034 12 345 67</td>
+            <td class="num">P-<%= patient.getId() %></td>
+            <td><%= patient.getNom() %></td>
+            <td><%= patient.getPrenom() %></td>
+            <td><%= patient.getDateNaissance() %></td>
+            <td><%= patient.getTelephone() %></td>
             <td class="row-actions">
-              <a class="btn btn-small" href="patient-voir.html">Voir</a>
-              <a class="btn btn-small" href="patient-modifier.html">Modifier</a>
+              <a class="btn btn-small" href="<%= request.getContextPath() %>/patient/<%= patient.getId() %>">Voir</a>
+              <a class="btn btn-small" href="<%= request.getContextPath() %>/patient/<%= patient.getId() %>/modifier">Modifier</a>
               <button type="button" class="btn btn-small btn-link-danger" data-delete="Jean Rakoto">Supprimer</button>
             </td>
           </tr>
-          <tr>
-            <td class="num">P-0002</td>
-            <td>Rasoanaivo</td>
-            <td>Hery</td>
-            <td>04/11/1992</td>
-            <td>032 98 765 43</td>
-            <td class="row-actions">
-              <a class="btn btn-small" href="patient-voir.html">Voir</a>
-              <a class="btn btn-small" href="patient-modifier.html">Modifier</a>
-              <button type="button" class="btn btn-small btn-link-danger" data-delete="Hery Rasoanaivo">Supprimer</button>
-            </td>
-          </tr>
-          <tr>
-            <td class="num">P-0003</td>
-            <td>Randria</td>
-            <td>Mialy</td>
-            <td>27/07/2001</td>
-            <td>033 45 678 90</td>
-            <td class="row-actions">
-              <a class="btn btn-small" href="patient-voir.html">Voir</a>
-              <a class="btn btn-small" href="patient-modifier.html">Modifier</a>
-              <button type="button" class="btn btn-small btn-link-danger" data-delete="Mialy Randria">Supprimer</button>
-            </td>
-          </tr>
+
+        <% } %>
+          
         </tbody>
       </table>
     </div>
